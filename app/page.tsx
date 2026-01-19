@@ -1,7 +1,7 @@
 import EventCard from "@/components/EventCard"
 import ExploreBtn from "@/components/ExploreBtn"
 import { events } from "@/lib/constans"
-import Image from "next/image"
+// 
 
 
 // const events = [
@@ -14,6 +14,7 @@ import Image from "next/image"
 
 const Page = () => {
     return (
+
 
 <section>
     <h1 className="text-center">The Hub for Every Dev <br /> Event You Can't Miss</h1>
@@ -40,4 +41,5 @@ const Page = () => {
 
     )
 }
+
 export default Page
