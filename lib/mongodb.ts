@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 // Validate MongoDB URI at module load time
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGO_DB_URI;
 
 if (!MONGODB_URI) {
   throw new Error(

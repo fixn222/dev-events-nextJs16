@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "components/EventDetails.tsx", "app/events/EventDetails"  ],
   "exclude": ["node_modules"]
 }
