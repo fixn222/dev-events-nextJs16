@@ -3,6 +3,7 @@ import EventCard from '@/components/EventCard';
 import { IEvent } from '@/database';
 import { getSimilarEventsBySlug } from '@/lib/actions/events.actions';
 import { sign } from 'crypto';
+import { cacheLife } from 'next/cache';
 // import next from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -38,9 +39,11 @@ const EventTags = ({ tags }: { tags: string[] }) => (
   </div>
 )
 const EventDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  
+  // 'use cache'
+  // cacheLife('hours');
+  
   const { slug } = await params;
-
-
   let event;
 
   try {
@@ -136,7 +139,7 @@ const EventDetailsPage = async ({ params }: { params: Promise<{ slug: string }> 
             ) : (
               <p className="text-sm">Be first to book your spot!</p>
             )}
-            <BookEvents key={event._id} />
+            <BookEvents eventId={event._id} slug={event.slug}   />
           </div>
         </aside>
       </div>
